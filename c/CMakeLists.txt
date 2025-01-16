@@ -6,22 +6,31 @@ project(Data-Science-from-Scratch)
 set(CMAKE_C_STANDARD 99)
 
 # Add your library sources here
-add_library(myclib
-    src/myclib.c
-    src/another_source.c
+# add_library(myclib
+#    src/myclib.c
+#    src/another_source.c
+# )
+
+add_executable(
+    main
+    main.c
 )
 
 # Add include directories if needed
-target_include_directories(myclib PUBLIC
-    include
-)
+#target_include_directories(main PUBLIC
+#    include
+#)
 
-## CUnit
-find_package(CUnit REQUIRED)                            # Find CUnit
-add_executable(test_myclib test_myclib.c)               # Add your test executable
-target_link_libraries(test_myclib CUnit::CUnit myclib)  # Link CUnit and your C library to the test executable
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
 
 
 # Install your library (optional)
-install(TARGETS myclib DESTINATION lib)
-install(FILES include/myclib.h DESTINATION include)
+# install(TARGETS myclib DESTINATION lib)
+ # install(FILES include/myclib.h DESTINATION include)
