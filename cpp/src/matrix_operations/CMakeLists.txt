@@ -1,0 +1,3 @@
+add_library(matrix_operations matrix_operations.cpp)
+
+target_include_directories(matrix_operations PUBLIC include)
