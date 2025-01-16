@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/piotr/CLionProjects/Data-Science-from-Scratch/c/scalar_operations_test[1]_tests.cmake")
+  include("C:/Users/piotr/CLionProjects/Data-Science-from-Scratch/c/scalar_operations_test[1]_tests.cmake")
+else()
+  add_test(scalar_operations_test_NOT_BUILT scalar_operations_test_NOT_BUILT)
+endif()

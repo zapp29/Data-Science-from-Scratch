@@ -5,21 +5,21 @@ project(Data-Science-from-Scratch)
 # Set the C standard (optional)
 set(CMAKE_C_STANDARD 99)
 
-# Add your library sources here
-# add_library(myclib
-#    src/myclib.c
-#    src/another_source.c
-# )
+# Add scalar operations library
+add_library(scalar_operations
+    src/scalar_operations.c
+)
+
+target_include_directories(scalar_operations PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
 
 add_executable(
     main
     main.c
 )
 
-# Add include directories if needed
-#target_include_directories(main PUBLIC
-#    include
-#)
+target_link_libraries(main PRIVATE scalar_operations)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -30,7 +30,19 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+enable_testing()
 
-# Install your library (optional)
-# install(TARGETS myclib DESTINATION lib)
- # install(FILES include/myclib.h DESTINATION include)
+# Add the test executable
+add_executable(
+    scalar_operations_test
+    tests/scalar_operations_test.cpp
+)
+
+target_link_libraries(
+    scalar_operations_test
+    GTest::gtest_main
+    scalar_operations
+)
+
+include(GoogleTest)
+gtest_discover_tests(scalar_operations_test)
