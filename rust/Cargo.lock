@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "Data-Science-from-Scratch"
+name = "data_science_from_scratch"
 version = "0.1.0"
