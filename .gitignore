@@ -2,3 +2,6 @@
 .idea
 
 rust/target/*
+
+python/src/__pycache__/*
+python/tests/__pycache__/*
