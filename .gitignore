@@ -5,3 +5,5 @@ rust/target/*
 
 python/src/__pycache__/*
 python/tests/__pycache__/*
+
+c/**/Debug
