@@ -14,7 +14,6 @@ pub fn divide(a: f32, b: f32) -> f32 {
     a / b
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
