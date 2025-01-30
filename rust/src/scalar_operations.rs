@@ -20,21 +20,33 @@ mod tests {
 
     #[test]
     fn test_add() {
-        assert_eq!(add(2.0, 3.0), 5.0);
+        let a = 2.0;
+        let b = 3.0;
+        assert_eq!(add(a, b), 5.0);
+        assert_eq!(add(b, a), 5.0);
     }
 
     #[test]
     fn test_subtract() {
-        assert_eq!(subtract(1.0, 2.0), -1.0);
+        let a = 2.0;
+        let b = 3.0;
+        assert_eq!(subtract(a, b), -1.0);
+        assert_eq!(subtract(b, a), 1.0);
     }
 
     #[test]
     fn test_multiply() {
-        assert_eq!(multiply(1.0, 2.0), 2.0);
+        let a = 2.0;
+        let b = 3.0;
+        assert_eq!(multiply(a, b), 6.0);
+        assert_eq!(multiply(b, a), 6.0);
     }
 
     #[test]
     fn test_divide() {
-        assert_eq!(divide(1.0, 2.0), 0.5);
+        let a = 2.0;
+        let b = 4.0;
+        assert_eq!(divide(a, b), 0.5);
+        assert_eq!(divide(b, a), 2.0);
     }
 }
