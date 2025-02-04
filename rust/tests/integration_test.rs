@@ -1,4 +1,4 @@
-use data_science_from_scratch::scalar_operations::{add, subtract, multiply, divide};
+use data_science_from_scratch::scalar_operations::{add, divide, multiply, subtract};
 
 #[test]
 fn test_add() {
